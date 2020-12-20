@@ -23,7 +23,7 @@ public class Task {
     /**
      * 任务的流程节点定义
      */
-    private List<FlowNode> nodeList;
+    private List<FlowNodeDef> nodeList;
 
     public Task() {
     }
@@ -33,7 +33,7 @@ public class Task {
         this.taskName = taskName;
     }
 
-    public Task(String taskId, String taskName, List<FlowNode> nodeList) {
+    public Task(String taskId, String taskName, List<FlowNodeDef> nodeList) {
         this.taskId = taskId;
         this.taskName = taskName;
         this.nodeList = nodeList;
@@ -55,11 +55,11 @@ public class Task {
         this.taskName = taskName;
     }
 
-    public List<FlowNode> getNodeList() {
+    public List<FlowNodeDef> getNodeList() {
         return nodeList;
     }
 
-    public void setNodeList(List<FlowNode> nodeList) {
+    public void setNodeList(List<FlowNodeDef> nodeList) {
         this.nodeList = nodeList;
     }
 }
