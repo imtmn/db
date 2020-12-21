@@ -14,6 +14,9 @@ import java.util.UUID;
 
 import static org.junit.Assert.*;
 
+/**
+ * 持久化操作测试
+ */
 public class FlowDaoTest {
 
     @Test

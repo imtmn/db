@@ -1,10 +1,12 @@
-package com.imtmn.data;
+package com.imtmn.init;
 
 import com.imtmn.constants.TaskEnum;
 import com.imtmn.entity.FlowNodeDef;
 import com.imtmn.entity.Task;
 
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * 初始化测试数据
@@ -12,7 +14,7 @@ import java.util.List;
  * @author mtmn
  * @date 2020/12/16 7:14
  */
-public class InitializationData {
+public class InitData {
 
     /**
      * 初始化数据
@@ -29,6 +31,8 @@ public class InitializationData {
      * @param threadNum
      */
     private static void initTaskData(Task task, int threadNum) {
+        ExecutorService executorService = Executors.newCachedThreadPool();
+//        executorService.execute(new Jo);
         List<FlowNodeDef> nodeList = task.getNodeList();
 
     }
