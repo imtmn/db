@@ -2,14 +2,10 @@ package com.imtmn.init;
 
 import cn.hutool.core.lang.Assert;
 import com.imtmn.constants.FlowNodeDefEnum;
-import com.imtmn.constants.TaskEnum;
 import com.imtmn.entity.FlowNodeDef;
 import org.junit.Test;
 
 import java.util.List;
-import java.util.Random;
-
-import static org.junit.Assert.*;
 
 /**
  * 随机流程数据

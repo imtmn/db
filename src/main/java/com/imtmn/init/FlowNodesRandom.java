@@ -1,7 +1,9 @@
 package com.imtmn.init;
 
 import com.imtmn.entity.FlowNodeDef;
+import com.imtmn.entity.Task;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -15,7 +17,7 @@ public class FlowNodesRandom {
     /**
      * 任务流程定义
      */
-    private List<FlowNodeDef> flowNodeDefs;
+    private final List<FlowNodeDef> flowNodeDefs;
 
     /**
      * 完成率
@@ -42,19 +44,19 @@ public class FlowNodesRandom {
      *
      * @return
      */
-    public List<FlowNodeDef> getRandomFlowNodes() {
+    public LinkedList<FlowNodeDef> getRandomFlowNodes() {
         //根据完成率 随机获取当前节点是否完成
         boolean isComputed = getRandomComputed();
         if (isComputed) {
             //已完成节点直接返回所有流程定义
-            return flowNodeDefs;
+            return new LinkedList<>(flowNodeDefs);
         } else {
             Random r = new Random();
             //随机未完成的节点下标
             int i = r.nextInt(flowNodeDefs.size() - 1);
             //至少有一个节点
-            i = i < 0 ? 1 : i;
-            return flowNodeDefs.subList(0, i);
+            i = (i == 0 ? 1 : i);
+            return new LinkedList<>(flowNodeDefs.subList(0, i));
         }
 
     }

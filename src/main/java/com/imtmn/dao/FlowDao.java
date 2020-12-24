@@ -28,21 +28,30 @@ public class FlowDao {
                             .set("task_id", flowNode.getTaskId())
                             .set("task_name", flowNode.getTaskName())
                             .set("info_id", flowNode.getInfoId())
-                            .set("processing_time",flowNode.getProcessingTime())
-                            .set("modification_time",flowNode.getModificationTime())
-                            .set("process_node_code",flowNode.getProcessNodeCode())
-                            .set("process_node_name",flowNode.getProcessNodeName())
-                            .set("current_node_code",flowNode.getCurrentNodeCode())
-                            .set("current_node_name",flowNode.getCurrentNodeName())
-                            .set("handler",flowNode.getHandler())
-                            .set("handler_group_code",flowNode.getHandlerGroupCode())
-                            .set("handler_group_name",flowNode.getHandlerGroupName())
-                            .set("receive_group_code",flowNode.getReceiveGroupCode())
-                            .set("receive_group_name",flowNode.getReceiveGroupName())
+                            .set("processing_time", flowNode.getProcessingTime())
+                            .set("modification_time", flowNode.getModificationTime())
+                            .set("process_node_code", flowNode.getProcessNodeCode())
+                            .set("process_node_name", flowNode.getProcessNodeName())
+                            .set("current_node_code", flowNode.getCurrentNodeCode())
+                            .set("current_node_name", flowNode.getCurrentNodeName())
+                            .set("handler", flowNode.getHandler())
+                            .set("handler_group_code", flowNode.getHandlerGroupCode())
+                            .set("handler_group_name", flowNode.getHandlerGroupName())
+                            .set("receive_group_code", flowNode.getReceiveGroupCode())
+                            .set("receive_group_name", flowNode.getReceiveGroupName())
 
             );
         } catch (SQLException e) {
             log.error("insert error ", e);
         }
+    }
+
+    public static int count() {
+        try {
+            return Db.use().count(Entity.create("flow_node"));
+        } catch (SQLException e) {
+            log.error("count error", e);
+        }
+        return -1;
     }
 }
