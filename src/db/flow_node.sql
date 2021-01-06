@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50649
 File Encoding         : 65001
 
-Date: 2020-12-21 07:42:05
+Date: 2020-12-28 07:02:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -37,7 +37,5 @@ CREATE TABLE `flow_node` (
   `receive_group_name` varchar(32) DEFAULT NULL COMMENT '接收部门名称',
   PRIMARY KEY (`id`),
   KEY `idx_info_id` (`info_id`),
-  KEY `idx_processing_time` (`processing_time`) USING BTREE,
-  KEY `idx_handle_group` (`handler_group_code`),
-  KEY `idx_receive_group` (`receive_group_code`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+  KEY `idx_processing_time` (`processing_time`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1493384 DEFAULT CHARSET=utf8;
